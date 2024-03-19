@@ -1,25 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <script>
-      const today = new Date();
-      const formattedDate = today.toISOString().slice(0, 10).replace(/-/g, '');
-      const iframe = document.getElementById('myCalendar');
-      iframe.src += `&dates=${formattedDate}/${formattedDate}`;
-      console.log(iframe.src)
-    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Google Calendar</title>
+</head>
+<body>
     <iframe id="myCalendar" src="https://calendar.google.com/calendar/u/0/embed?height=1200%src=events@chatham.k12.nc.us&ctz=America/New_York&mode=DAY&showTitle=0&showPrint=0&showDate=0&showTabs=0&showCalendars=0&showTz=0">
     </iframe>
-  </body>
+
+    <script>
+        const today = new Date();
+        const formattedDate = today.toISOString().slice(0, 10).replace(/-/g, ''); // Get YYYYMMDD
+        const iframe = document.getElementById('myCalendar');
+        iframe.src += `&dates=${formattedDate}/${formattedDate}`;
+    </script>
+</body>
 </html>
-
-
-
-
-
-
 
